@@ -6,13 +6,20 @@ import "./App.css";
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
+  const [quarter, setQuarter] = useState(0);
+  const [down, setDown] = useState(0);
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
 
-  const homeTouchdown = () => {setHomeScore(homeScore + 7)}
-  const homeFieldGoal = () => {setHomeScore(homeScore + 3)}
-  const awayTouchdown = () => {setAwayScore(awayScore + 7)}
-  const awayFieldGoal = () => {setAwayScore(awayScore + 3)}
+
+  const plusQuarter = () => { setQuarter(quarter + 1) }
+  const minusQuarter = () => { setQuarter(quarter - 1) }
+  const plusDown = () => { setDown(down + 1) }
+  const minusDown = () => { setDown(down - 1) }
+  const homeTouchdown = () => { setHomeScore(homeScore + 7) }
+  const homeFieldGoal = () => { setHomeScore(homeScore + 3) }
+  const awayTouchdown = () => { setAwayScore(awayScore + 7) }
+  const awayFieldGoal = () => { setAwayScore(awayScore + 3) }
 
   return (
     <div className="container">
@@ -30,7 +37,7 @@ function App() {
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow down={down} quarter={quarter}/>
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -42,6 +49,12 @@ function App() {
         <div className="awayButtons">
           <button onClick={awayTouchdown} className="awayButtons__touchdown">Away Touchdown</button>
           <button onClick={awayFieldGoal} className="awayButtons__fieldGoal">Away Field Goal</button>
+        </div>
+        <div className="downButtons">
+          <button onClick={plusDown}>+</button><h3>Down</h3><button onClick={minusDown}>-</button>
+        </div>
+        <div className="quarterButtons">
+          <button onClick={plusQuarter}>+</button><h3>Quarter</h3><button onClick={minusQuarter}>-</button>
         </div>
       </section>
     </div>
