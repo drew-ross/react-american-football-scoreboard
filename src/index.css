@@ -34,13 +34,16 @@ button {
   text-decoration: none;
   background: #414141;
   color: #ffffff;
-  font-family: inherit;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
   font-size: 1.6rem;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  margin: 1rem;
+  border-radius: 4px;
 }
 
 button:hover,
