@@ -30,10 +30,6 @@ const Timer = () => {
         return () => clearInterval(interval);
     }, [active, seconds, minutes]);
 
-    // const formatTime = () => {
-    //     let m
-    // }
-
     return (
         <div className="timer">
             <div>{minutes}:{seconds}</div>

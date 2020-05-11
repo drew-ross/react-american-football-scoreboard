@@ -51,10 +51,10 @@ function App() {
           <button onClick={awayTouchdown} className="awayButtons__touchdown">Away Touchdown</button>
           <button onClick={awayFieldGoal} className="awayButtons__fieldGoal">Away Field Goal</button>
         </div>
-        <div className="downButtons">
+        <div className="plusMinus">
           <button onClick={plusDown}>+</button><h3>Down</h3><button onClick={minusDown}>-</button>
         </div>
-        <div className="quarterButtons">
+        <div className="plusMinus">
           <button onClick={plusQuarter}>+</button><h3>Quarter</h3><button onClick={minusQuarter}>-</button>
         </div>
       </section>
